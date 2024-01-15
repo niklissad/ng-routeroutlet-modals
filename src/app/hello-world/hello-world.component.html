@@ -1,0 +1,26 @@
+<h1>hello-world works!</h1>
+<section>
+  <header>
+    HEADER
+  </header>
+
+  <p>
+    Logged in: <b>{{ authService.isLoggedIn }}</b>
+  </p>
+
+  <div>
+    <button *ngIf="!authService.isLoggedIn" [routerLink]="['', { outlets: { auth: ['register'] } }]">Registration</button>
+    &nbsp;
+    <button *ngIf="!authService.isLoggedIn" [routerLink]="['', { outlets: { auth: ['login'] } }]">Login</button>
+    &nbsp;
+    <button *ngIf="authService.isLoggedIn" (click)="authService.logout()">Logout</button>
+  </div>
+</section>
+&nbsp;
+<section>
+  There u can find all links to register ant login popup
+
+  <button [routerLink]="['', { outlets: { auth: ['register'] } }]">Registration</button>
+  &nbsp;
+  <button [routerLink]="['', { outlets: { auth: ['login'] } }]">Login</button>
+</section>

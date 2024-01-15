@@ -1,0 +1,16 @@
+<section class="backdrop-modal">
+  <dialog open #registerDialog>
+    <header>
+      <button (click)="registerDialog.close()" [routerLink]="['', { outlets: { auth: null } }]" class="close-btn">X</button>
+    </header>
+    <p>Register popup works!</p>
+    <form>
+      <fieldset>
+        <input type="text" placeholder="Login">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Repeat password">
+      </fieldset>
+      <button type="button">Register</button>
+    </form>
+  </dialog>
+</section>

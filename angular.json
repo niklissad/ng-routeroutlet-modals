@@ -65,6 +65,7 @@
               "buildTarget": "ng-routeroutlet-modals:build:production"
             },
             "development": {
+              "port": 4100,
               "buildTarget": "ng-routeroutlet-modals:build:development"
             }
           },
