@@ -15,6 +15,13 @@ export const routes: Routes = [
       {
         path: 'world',
         loadComponent: () => import('./hello-world/hello-world.component').then(m => m.HelloWorldComponent),
+        children: [
+          {
+            path: 'register',
+            loadComponent: () => import('./auth/register/register.component').then(m => m.RegisterComponent),
+            canActivate: [authGuard]
+          },
+        ]
       },
       {
         path: 'kitty',
