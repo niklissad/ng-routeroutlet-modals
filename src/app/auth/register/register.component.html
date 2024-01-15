@@ -10,7 +10,7 @@
         <input type="password" placeholder="Password">
         <input type="password" placeholder="Repeat password">
       </fieldset>
-      <button type="button">Register</button>
+      <button (click)="authService.login()" [routerLink]="['', { outlets: { auth: null } }]">Register</button>
     </form>
   </dialog>
 </section>

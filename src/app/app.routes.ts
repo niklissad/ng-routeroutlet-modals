@@ -1,10 +1,30 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './auth/auth.guard';
+import { AppShellComponent } from './app-shell/app-shell.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./hello-world/hello-world.component').then(m => m.HelloWorldComponent),
+    redirectTo: 'world',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
+    component: AppShellComponent,
+    children: [
+      {
+        path: 'world',
+        loadComponent: () => import('./hello-world/hello-world.component').then(m => m.HelloWorldComponent),
+      },
+      {
+        path: 'kitty',
+        loadComponent: () => import('./hello-kitty/hello-kitty.component').then(m => m.HelloKittyComponent),
+      },
+      {
+        path: 'guys',
+        loadComponent: () => import('./hello-guys/hello-guys.component').then(m => m.HelloGuysComponent),
+      },
+    ]
   },
   {
     path: 'register',
