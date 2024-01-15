@@ -1,7 +1,7 @@
 <section class="backdrop-modal">
-  <dialog open #registerDialog>
+  <dialog #loginDialog>
     <header>
-      <button (click)="registerDialog.close()" [routerLink]="['', { outlets: { auth: null } }]" class="close-btn">X</button>
+      <button (click)="loginDialog.close()" [routerLink]="['', { outlets: { auth: null } }]" class="close-btn">X</button>
     </header>
     <p>Login popup works!</p>
     <form>

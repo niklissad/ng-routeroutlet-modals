@@ -5,21 +5,16 @@ import { AppShellComponent } from './app-shell/app-shell.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'world',
-    pathMatch: 'full',
-  },
-  {
-    path: '',
     component: AppShellComponent,
     children: [
       {
-        path: 'world',
+        path: '',
         loadComponent: () => import('./hello-world/hello-world.component').then(m => m.HelloWorldComponent),
         children: [
           {
             path: 'register',
             loadComponent: () => import('./auth/register/register.component').then(m => m.RegisterComponent),
-            canActivate: [authGuard]
+            canActivate: [authGuard],
           },
         ]
       },
